@@ -1,0 +1,28 @@
+<%= javascript_tag do %>
+  $(document).ready(function() {
+	$('#button1').click(function(event){
+	command = $("#command").val();
+	if(command == ""){
+		alert("give some text");
+	} else{
+	$.ajax({url: "/register/execute_command.json", data: {command: command} , type: "post" ,success: function(result){
+        alert(result.message);
+        $("#result").append( command + " ===>  " + result.message.replace("\n","<br/>") + "<br/>" )
+        $("#command").attr("value", "");
+    }});
+	}
+});
+});
+<% end %>
+Note:<br/>
+<ul>
+<li>Write a command in text field and press execute if you want run a command</li>
+<li>If you want exit, you press enter it will go to home page</li>
+</ul>
+<form action="/" method="post">
+	<div style="display: inline; padding-right: 50px;" >Enter Command</div><input type="text" name="text" id="command" style="margin-top: 4px; width:400px;" required></input><br/><br/>
+	<input type="button" id="button1" value="Execute" onclick="name" text-align="center" style = "border: none;padding: 15px;width: 100px;margin-top: 4px;background: #0f0;color: #424242;border-radius: 50px;" ></input>
+	<input type="hidden" name="text" id="command"></input>
+	<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</form>
+<div id="result" style = "background: lavenderblush;margin-top: 30px"></div>

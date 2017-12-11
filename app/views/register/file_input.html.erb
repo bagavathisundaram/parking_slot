@@ -1,0 +1,6 @@
+<form action="/register/file_input_action"enctype="multipart/form-data" method="post">
+	Upload file in txt format:<br/><br/>
+	<input type="file" name="files" style = "border: none;padding: 15px;width: 300px;margin-top: 4px;background: #0ff;color: #424242;border-radius: 50px;"><br/><br/>
+	<input type="submit" value="Send" style = "border: none;padding: 15px;width: 100px;margin-top: 4px;background: #0f0;color: #424242;border-radius: 50px;"> <input type="reset" style = "border: none;padding: 15px;width: 100px;margin-top: 4px;background: #0f0;color: #424242;border-radius: 50px;">
+	<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+ </form>
