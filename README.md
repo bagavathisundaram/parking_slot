@@ -1,24 +1,24 @@
-# README
+Ruby version 2.3.0
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To run this application
 
-Things you may want to cover:
+1)bundle install
+2)rails s
 
-* Ruby version
+After that goto localhost:3000 
 
-* System dependencies
+if you want file upload,
 
-* Configuration
+1)click file upload option
+2)choose file from local system
+3)submit it
+4)the output file will automatically start download( you can change file name)
 
-* Database creation
 
-* Database initialization
+If you want to command line
 
-* How to run the test suite
+1)click second option command
+2)enter command and press execute one by one
+3)It will alert the output as well as it will display in webpage also
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
